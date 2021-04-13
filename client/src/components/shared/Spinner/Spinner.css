@@ -1,0 +1,57 @@
+.spinner {
+    position: absolute;
+    margin: auto;
+    overflow: hidden;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    border: 3px solid #15529b;
+}
+
+.container-spinner {
+  left: 50%;
+  top: 50%;
+  overflow: hidden;
+  width: 140px;
+  height: 140px;
+  animation: loading 10s linear infinite;
+}
+
+.wave {
+    width: 280px;
+    height: 280px;
+    background: #4b88ec;
+    border-radius: 40%;
+    transform-style: preserve-3d;
+    transform-origin: center;
+    animation: rotate 2.5s linear infinite;
+    margin-top: 15px;
+    margin-left: -50%;
+  position: absolute;
+    border: 3px solid #15529b;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0) translate(0,0);
+  }
+  45% {
+    transform: rotate(90deg) translate(15px, 15px);
+  }
+  100% {
+    transform: rotate(180deg) translate(0, 0);
+  }
+}
+
+@keyframes loading {
+  0% {
+    transform: translate(0, 60%);
+  }
+  50% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, 60%);
+  }
+}
