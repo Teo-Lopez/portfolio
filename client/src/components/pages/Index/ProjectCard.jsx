@@ -1,6 +1,7 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
 import { Link } from 'react-router-dom'
+
 const appearRight = keyframes`
   from {
     overflow: hidden;
@@ -31,21 +32,39 @@ const Card = styled.article`
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
-	margin: auto;
 	height: 100%;
+	width: 100%;
+	box-sizing: border-box;
 	background-image: ${({ img }) => `url(${img})`};
 	background-size: cover;
 	background-repeat: no-repeat;
 	object-fit: contain;
+	transition: filter 700ms;
 	filter: grayscale(0.8);
-
-	&:hover .cover {
-		transition: background-color 700ms;
-		background-color: rgba(13, 13, 13, 0.8);
+	.cover {
 		height: 100%;
 		width: 100%;
 		display: flex;
+		transition: background-color 700ms;
 		align-items: center;
+	}
+
+	&:hover {
+		transition: filter 700ms;
+		filter: grayscale(0);
+
+		.cover {
+			transition: background-color 700ms;
+			background-color: rgba(13, 13, 13, 0.6);
+		}
+		.innerWrapper {
+			opacity: 1;
+			transition: opacity 700ms;
+		}
+	}
+	.underScore {
+		display: inline-block;
+		border-bottom: 1px solid rgba(250, 250, 250, 0.8);
 	}
 
 	.innerWrapper {
@@ -53,14 +72,26 @@ const Card = styled.article`
 		margin: 20px 50px;
 		color: rgb(250, 250, 250);
 		font-size: 1.8em;
+		width: 100%;
 		text-align: center;
 		opacity: 0;
 		transition: opacity 700ms;
 	}
+	h3 {
+		font-size: 1.2em;
+		font-weight: 300;
+		letter-spacing: 4px;
+	}
+	p {
+		font-weight: 100;
+	}
 
-	&:hover .innerWrapper {
-		opacity: 1;
-		transition: opacity 700ms;
+	.tech-wrapper {
+		width: 80%;
+		margin: 0 auto;
+		h4 {
+			font-size: 0.8em;
+		}
 	}
 
 	&.appearRight {
@@ -75,13 +106,18 @@ const Card = styled.article`
 	}
 `
 
-function ProjectCard({ img, description, isVisible, direction, url }) {
+function ProjectCard({ img, title, description, isVisible, direction, url, techs = [] }) {
 	return (
 		<Card img={img} className={isVisible && (direction === 'left' ? 'appearLeft' : 'appearRight')}>
-			<Link as='div' to={'url'} className='cover'>
+			<Link as='div' to={url} className='cover'>
 				<div className='innerWrapper'>
-					<h3>Titulo proyecto</h3>
+					<h3 className='underScore'>{title}</h3>
 					<p>{description}</p>
+					<hr />
+					<footer className='tech-wrapper'>
+						<h4 className='underScore'>Tecnologías:</h4>
+						<p>{techs.map((elm, idx) => `${elm}${idx === techs.length - 1 ? '.' : ','} `)}</p>
+					</footer>
 				</div>
 			</Link>
 		</Card>
