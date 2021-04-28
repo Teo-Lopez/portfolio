@@ -1,6 +1,6 @@
 body {
 	font-weight: 200;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Roboto Mono', sans-serif;
 	background-color: rgb(250, 250, 250);
 }
 
@@ -8,7 +8,7 @@ main {
 	min-height: 100vh;
 	padding-top: 65px;
 	padding-bottom: 12px;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Roboto Mono', sans-serif;
 }
 /* 
 h1,

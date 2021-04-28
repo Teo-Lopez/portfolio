@@ -1,12 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
+
 const TechCardWrapper = styled.div`
 	text-align: center;
+	width: 100%;
 	h2 {
 		margin-top: 6px;
 	}
 	img {
-		width: 100%;
+		max-height: 280px;
 		object-fit: contain;
 	}
 `

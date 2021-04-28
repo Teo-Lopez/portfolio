@@ -13,11 +13,26 @@ const Header = styled.header`
 	position: fixed;
 	width: 100%;
 	z-index: -1000;
-	h1,
+	text-align: center;
+	color: rgba(250, 250, 250, 0.9);
+
+
+	h1 {
+		font-size: 5em;
+		margin-bottom: 1em;
+	}
+
 	h2,
-	p,
-	.brackets {
-		color: rgba(250, 250, 250, 0.9);
+	p {
+		font-size: 3em;
+	}
+
+	.center {
+		width: 80%;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 	}
 	.top {
 		height: 45%;
@@ -28,33 +43,20 @@ const Header = styled.header`
 		align-items: center;
 		justify-content: center;
 	}
-	h1,
-	span {
-		font-size: 5em;
-	}
-
-	.brackets {
-		margin-bottom: 0.2em;
-		font-size: 10em;
-		font-family: 'Ubuntu', sans-serif;
-		font-weight: 100;
-	}
 `
 const Technologies = styled(Row)``
 
 const Hero = () => {
 	return (
 		<Header>
-			<Container style={{ height: '100%' }}>
-				<div className='flex-center top'>
-					<span className='brackets'>{'{'}</span>
-					<h1>Teodoro López</h1>
-					<span className='brackets'>{'}'}</span>
-				</div>
-				<Technologies className='justify-content-around align-items-center bottom'>
+			<div className='center'>
+				<h1>Teodoro López</h1>
+				<Technologies className='justify-content-around align-items-center'>
+					
 					<Col className='col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12'>
 						<TechCard imgUrl={reactLogo} name={'React'} />
 					</Col>
+					
 					<Col className='col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12'>
 						<TechCard imgUrl={mongoLogo} name={'Mongo'} />
 					</Col>
@@ -65,7 +67,7 @@ const Hero = () => {
 						<TechCard imgUrl={jsLogo} name={'Javascript'} />
 					</Col>
 				</Technologies>
-			</Container>
+			</div>
 		</Header>
 	)
 }
