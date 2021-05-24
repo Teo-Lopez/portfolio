@@ -5,8 +5,9 @@ import { Container, Row, Col } from 'react-bootstrap'
 
 const WhiteSection = styled.section`
 	padding: 24px;
-	margin-top: 100vh;
 	background-color: rgb(250, 250, 250);
+
+	position: relative;
 
 	/* padding-bottom: 1200px; */
 	h2 {
@@ -16,8 +17,14 @@ const WhiteSection = styled.section`
 	.container {
 		margin: 0 auto;
 	}
+
+	.rectangle {
+		width: 80%;
+		height: 100%;
+	}
+
 	img {
-		width: 60%;
+		width: 100%;
 		filter: grayscale(0.1);
 		border-radius: 50%;
 	}
@@ -25,17 +32,29 @@ const WhiteSection = styled.section`
 
 function AboutMe() {
 	return (
-		<WhiteSection>
+		<WhiteSection id='about-me'>
 			<Container>
 				<Row className='justify-content-between align-items-center'>
-					<Col className='col-md-6 col-12'>
-						<img src={profilePhoto} alt='Teodoro López, fullstack developer'></img>
+					<Col className='col-md-4 col-12'>
+						<div className='rectangle'>
+							<img src={profilePhoto} alt='Teodoro López, fullstack developer'></img>
+						</div>
 					</Col>
-					<Col className='col-md-6 col-12'>
+					<Col className='col-md-8 col-12'>
 						<h2>About me</h2>
 						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam fugiat est voluptates. At beatae harum culpa ipsum, similique,
-							velit incidunt magnam quasi sed, nobis reprehenderit tempore distinctio accusantium nostrum quisquam!
+							Desarrollador junior fullstack con Stack MERN (MongoDB, Express, React, Node)
+							anteriormente psicologo y recruiter IT.
+						</p>
+						<p>
+							Realicé 2 proyectos web con el mismo y una skill para Alexa Echo también en
+							javascript.
+						</p>
+						<p>
+							Tras el bootcamp me incorporé al equipo educativo como Teacher Assistant ayudando a
+							docenas de alumnos a sacar adelante sus propios proyectos, ayudé en un proyecto
+							internacional para la mejora de la documentación del curso además de en otros
+							proyectos internos.
 						</p>
 					</Col>
 				</Row>

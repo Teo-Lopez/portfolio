@@ -1,4 +1,3 @@
-import './Home.css'
 import React from 'react'
 import Hero from './Hero'
 import AboutMe from './AboutMe'
@@ -8,8 +7,8 @@ const IndexPage = () => {
 	return (
 		<>
 			<Hero />
-			<AboutMe />
 			<Projects />
+			<AboutMe />
 		</>
 	)
 }

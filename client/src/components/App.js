@@ -1,7 +1,6 @@
 import { Component } from 'react'
 import './App.css'
 import Routes from './routes/Routes'
-import Footer from './layout/Footer/Footer'
 import Navigation from './layout/Navigation/Navigation'
 import Alert from './../components/shared/Alert/Alert'
 
@@ -12,8 +11,8 @@ class App extends Component {
 			alert: {
 				show: false,
 				title: '',
-				text: '',
-			},
+				text: ''
+			}
 		}
 	}
 
@@ -27,7 +26,6 @@ class App extends Component {
 					<Routes handleAlert={this.handleAlert} />
 				</main>
 				<Alert handleAlert={this.handleAlert} show={this.state.alert.show} title={this.state.alert.title} text={this.state.alert.text} />
-				<Footer />
 			</>
 		)
 	}

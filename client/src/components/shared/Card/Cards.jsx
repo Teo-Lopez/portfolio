@@ -4,6 +4,7 @@ import styled from 'styled-components'
 const TechCardWrapper = styled.div`
 	text-align: center;
 	width: 100%;
+
 	h2 {
 		margin-top: 6px;
 	}

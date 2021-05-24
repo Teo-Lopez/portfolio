@@ -1,6 +1,5 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
-import { Link } from 'react-router-dom'
 
 const appearRight = keyframes`
   from {
@@ -40,7 +39,8 @@ const Card = styled.article`
 	background-repeat: no-repeat;
 	object-fit: contain;
 	transition: filter 700ms;
-	filter: grayscale(0.8);
+	filter: grayscale(0.4) brightness(0.7);
+
 	.cover {
 		height: 100%;
 		width: 100%;
@@ -51,7 +51,7 @@ const Card = styled.article`
 
 	&:hover {
 		transition: filter 700ms;
-		filter: grayscale(0);
+		filter: grayscale(0) brightness(1);
 
 		.cover {
 			transition: background-color 700ms;
@@ -109,7 +109,7 @@ const Card = styled.article`
 function ProjectCard({ img, title, description, isVisible, direction, url, techs = [] }) {
 	return (
 		<Card img={img} className={isVisible && (direction === 'left' ? 'appearLeft' : 'appearRight')}>
-			<Link as='div' to={url} className='cover'>
+			<a href={url} target='_blank' className='cover' rel='noreferrer'>
 				<div className='innerWrapper'>
 					<h3 className='underScore'>{title}</h3>
 					<p>{description}</p>
@@ -119,7 +119,7 @@ function ProjectCard({ img, title, description, isVisible, direction, url, techs
 						<p>{techs.map((elm, idx) => `${elm}${idx === techs.length - 1 ? '.' : ','} `)}</p>
 					</footer>
 				</div>
-			</Link>
+			</a>
 		</Card>
 	)
 }
