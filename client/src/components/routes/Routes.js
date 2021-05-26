@@ -5,7 +5,7 @@ const Routes = ({ storeUser, loggedUser, isAdmin, handleAlert }) => {
 	return (
 		<>
 			<Switch>
-				<Route path='/' exact render={() => <IndexPage />} />
+				<Route path='/' render={() => <IndexPage />} />
 			</Switch>
 		</>
 	)
