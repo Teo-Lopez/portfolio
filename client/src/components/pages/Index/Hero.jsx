@@ -7,40 +7,80 @@ import styled from 'styled-components'
 import { Row, Col } from 'react-bootstrap'
 
 const Header = styled.header`
-	height: calc(100vh - 65px);
 	background-color: black;
 	text-align: center;
 	color: rgba(250, 250, 250, 0.9);
-	z-index: -1000;
-
-	.fixer {
-		height: calc(100vh - 65px);
-		width: 100%;
-		position: fixed;
-	}
-
 	h1 {
-		font-size: 5em;
-		margin-bottom: 1em;
+		padding-top: 16px;
+		font-size: 2em;
+		letter-spacing: 2.5px;
+		color: white;
 	}
-
-	h2,
-	p {
-		font-size: 3em;
+	.fixer {
+		height: 100vh;
+		width: 100%;
 	}
-
 	.center {
 		width: 80%;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
+		margin: 0 auto;
 	}
 
-	.flex-center {
-		display: flex;
-		align-items: center;
-		justify-content: center;
+	img {
+		max-height: 130px;
+		margin-top: 16px;
+	}
+
+	@media only screen and (min-width: 870px) {
+		height: calc(100vh - 65px);
+
+		.fixer {
+			position: fixed;
+
+			height: calc(100vh - 65px);
+		}
+
+		.center {
+			width: 80%;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		img {
+			max-height: 200px;
+		}
+
+		h1 {
+			font-size: 3em;
+			margin-bottom: 1em;
+		}
+
+		h2,
+		p {
+			font-size: 2em;
+		}
+
+		.flex-center {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+
+	@media only screen and (min-width: 1200px) {
+		img {
+			max-height: 280px;
+		}
+
+		h1 {
+			font-size: 5em;
+			margin-bottom: 1em;
+		}
+
+		h2,
+		p {
+			font-size: 3em;
+		}
 	}
 `
 const Technologies = styled(Row)``
@@ -51,18 +91,17 @@ const Hero = () => {
 			<div className='fixer'>
 				<div className='center'>
 					<h1>Teodoro López</h1>
-					<Technologies className='justify-content-around align-items-center'>
-						<Col className='col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12'>
+					<Technologies className='	justify-content-around align-items-center'>
+						<Col xs={12} sm={6} lg={3}>
 							<TechCard imgUrl={reactLogo} name={'React'} />
 						</Col>
-
-						<Col className='col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12'>
+						<Col xs={12} sm={6} lg={3}>
 							<TechCard imgUrl={mongoLogo} name={'Mongo'} />
 						</Col>
-						<Col className='col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12'>
+						<Col xs={12} sm={6} lg={3}>
 							<TechCard imgUrl={nodeLogo} name={'Node.js'} />
 						</Col>
-						<Col className='col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12'>
+						<Col xs={12} sm={6} lg={3}>
 							<TechCard imgUrl={jsLogo} name={'Javascript'} />
 						</Col>
 					</Technologies>

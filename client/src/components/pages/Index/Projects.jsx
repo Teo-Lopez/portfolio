@@ -14,7 +14,7 @@ const ProjectsWrapper = styled.section`
 	color: white;
 
 	h2 {
-		font-size: 3.5em;
+		font-size: 2.5em;
 		letter-spacing: 6px;
 		padding: 30px;
 	}
@@ -22,34 +22,45 @@ const ProjectsWrapper = styled.section`
 
 const StyledGrid = styled.div`
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: 100%;
 	grid-auto-rows: minmax(300px, auto);
-	grid-gap: 1px;
-
-	.left-col {
-		grid-column: 1 / 3;
-		grid-row: 1 / 5;
-	}
-
-	.first-row {
-		grid-column: 3 / 5;
-		grid-row: 1 / 3;
+	grid-gap: 0px;
+	color: white;
+	.project {
 		display: flex;
 		align-items: center;
 	}
 
-	.second-row {
-		display: flex;
-		align-items: center;
-		grid-column: 3 / 5;
-		grid-row: 3 / 5;
+	.project:nth-of-type(1) {
+		grid-column: 0 / 1;
+		grid-row: 1 / 2;
 	}
 
-	.third-row-right {
-		display: flex;
-		align-items: center;
-		grid-column: 3 / 5;
-		grid-row: 5 / 7;
+	@media only screen and (min-width: 870px) {
+		.project {
+			display: flex;
+			align-items: center;
+		}
+
+		.project::nth-of-type(0) {
+			grid-column: 1 / 3;
+			grid-row: 1 / 3;
+		}
+
+		.project::nth-of-type(1) {
+			grid-column: 3 / 5;
+			grid-row: 1 / 3;
+		}
+
+		.project::nth-of-type(2) {
+			grid-column: 3 / 5;
+			grid-row: 3 / 5;
+		}
+
+		.project::nth-of-type(3) {
+			grid-column: 3 / 5;
+			grid-row: 5 / 7;
+		}
 	}
 `
 
@@ -58,7 +69,7 @@ function Projects() {
 		<ProjectsWrapper className='projects'>
 			<h2>Proyectos</h2>
 			<StyledGrid id='projects'>
-				<TrackVisibility once partialVisibility className='left-col'>
+				<TrackVisibility once partialVisibility className='project'>
 					<ProjectCard
 						direction='left'
 						title='TellMaster'
@@ -70,7 +81,7 @@ function Projects() {
 						techs={['React', 'Node', 'Express', 'MongoDB', 'CKeditor', 'Hooks & Context']}
 					/>
 				</TrackVisibility>
-				<TrackVisibility once partialVisibility className='first-row'>
+				<TrackVisibility once partialVisibility className='project'>
 					<ProjectCard
 						direction='right'
 						img={lab}
@@ -82,7 +93,7 @@ function Projects() {
 						techs={['HBS o handlebars', 'Node', 'Express', 'MongoDB', 'Axios']}
 					/>
 				</TrackVisibility>
-				<TrackVisibility once partialVisibility className='second-row'>
+				<TrackVisibility once partialVisibility className='project'>
 					<ProjectCard
 						direction='right'
 						img={echodot}
@@ -91,7 +102,7 @@ function Projects() {
 						techs={['Amazon polly', 'Mongodb', 'Express', 'Amazon dev. console']}
 					/>
 				</TrackVisibility>
-				<TrackVisibility once partialVisibility className='third-row-right'>
+				<TrackVisibility once partialVisibility className='project'>
 					<ProjectCard
 						direction='right'
 						img={chronopomo}

@@ -8,7 +8,7 @@ const IndexPage = () => {
 		<>
 			<Hero />
 			<Projects />
-			<AboutMe />
+			{/* <AboutMe /> */}
 		</>
 	)
 }

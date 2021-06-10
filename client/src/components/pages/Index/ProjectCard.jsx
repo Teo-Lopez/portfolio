@@ -31,36 +31,24 @@ const Card = styled.article`
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
-	height: 100%;
-	width: 100%;
-	box-sizing: border-box;
+
 	background-image: ${({ img }) => `url(${img})`};
-	background-size: cover;
+	background-size: contain;
+	background-position: 50%;
 	background-repeat: no-repeat;
 	object-fit: contain;
 	transition: filter 700ms;
-	filter: grayscale(0.4) brightness(0.7);
+	transition-delay: 700ms;
+	filter: grayscale(0.8) brightness(1);
 
+	///
 	.cover {
 		height: 100%;
 		width: 100%;
 		display: flex;
+		background-color: rgba(13, 13, 13, 0.7);
 		transition: background-color 700ms;
 		align-items: center;
-	}
-
-	&:hover {
-		transition: filter 700ms;
-		filter: grayscale(0) brightness(1);
-
-		.cover {
-			transition: background-color 700ms;
-			background-color: rgba(13, 13, 13, 0.6);
-		}
-		.innerWrapper {
-			opacity: 1;
-			transition: opacity 700ms;
-		}
 	}
 	.underScore {
 		display: inline-block;
@@ -74,23 +62,24 @@ const Card = styled.article`
 		font-size: 1.8em;
 		width: 100%;
 		text-align: center;
-		opacity: 0;
+		opacity: 1;
 		transition: opacity 700ms;
 	}
 	h3 {
-		font-size: 1.2em;
-		font-weight: 300;
-		letter-spacing: 4px;
+		font-size: 0.8em;
+		letter-spacing: 2px;
 	}
 	p {
-		font-weight: 100;
+		color: white;
+		font-size: 0.5em;
+		font-weight: 300;
 	}
 
 	.tech-wrapper {
 		width: 80%;
 		margin: 0 auto;
 		h4 {
-			font-size: 0.8em;
+			font-size: 0.5em;
 		}
 	}
 
@@ -103,6 +92,27 @@ const Card = styled.article`
 		animation-name: ${() => appearLeft};
 		animation-duration: 1s;
 		animation-timing-function: ease-out;
+	}
+
+	@media only screen and (min-width: 870px) {
+		filter: grayscale(0.4) brightness(0.7);
+		opacity: 0;
+
+		.cover {
+			background-color: initial;
+		}
+		&:hover {
+			filter: grayscale(0) brightness(1);
+
+			.cover {
+				transition: background-color 700ms;
+				background-color: rgba(13, 13, 13, 0.6);
+			}
+			.innerWrapper {
+				opacity: 1;
+				transition: opacity 700ms;
+			}
+		}
 	}
 `
 
