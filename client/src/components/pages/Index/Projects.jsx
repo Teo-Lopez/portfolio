@@ -26,40 +26,52 @@ const StyledGrid = styled.div`
 	grid-auto-rows: minmax(300px, auto);
 	grid-gap: 0px;
 	color: white;
+
 	.project {
 		display: flex;
 		align-items: center;
+		grid-column: 0 / 1;
 	}
 
 	.project:nth-of-type(1) {
-		grid-column: 0 / 1;
 		grid-row: 1 / 2;
 	}
 
+	.project:nth-of-type(2) {
+		grid-row: 2 / 3;
+	}
+
+	.project:nth-of-type(3) {
+		grid-row: 3 / 4;
+	}
+
+	.project:nth-of-type(4) {
+		grid-row: 4 / 5;
+	}
+
+	.project:nth-of-type(5) {
+		grid-row: 5 / 6;
+	}
+
 	@media only screen and (min-width: 870px) {
-		.project {
-			display: flex;
-			align-items: center;
+		.project:nth-of-type(1) {
+			grid-row: 1 / 2;
 		}
 
-		.project::nth-of-type(0) {
-			grid-column: 1 / 3;
-			grid-row: 1 / 3;
+		.project:nth-of-type(2) {
+			grid-row: 3 / 4;
 		}
 
-		.project::nth-of-type(1) {
-			grid-column: 3 / 5;
-			grid-row: 1 / 3;
+		.project:nth-of-type(3) {
+			grid-row: 5 / 6;
 		}
 
-		.project::nth-of-type(2) {
-			grid-column: 3 / 5;
-			grid-row: 3 / 5;
+		.project:nth-of-type(4) {
+			grid-row: 6 / 7;
 		}
 
-		.project::nth-of-type(3) {
-			grid-column: 3 / 5;
-			grid-row: 5 / 7;
+		.project:nth-of-type(5) {
+			grid-row: 8 / 9;
 		}
 	}
 `

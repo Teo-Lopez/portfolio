@@ -1,54 +1,31 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
 
-const appearRight = keyframes`
+const appear = keyframes`
   from {
-    overflow: hidden;
-    transform: translate(400px, 0);
-     opacity: 0
+    opacity: 0
   }
   to {
-    overflow: initial;
     transform: translate(0, 0);
-     opacity: 1
-  }
-`
-
-const appearLeft = keyframes`
-  from {
-    overflow: hidden;
-    transform: translate(-400px, 0);
-     opacity: 0
-  }
-  to {
-    overflow: initial;
-    transform: translate(0, 0);
-     opacity: 1
+  	opacity: 1
   }
 `
 
 const Card = styled.article`
-	display: flex;
-	align-items: center;
-	justify-content: space-around;
-
+	width: 100%;
 	background-image: ${({ img }) => `url(${img})`};
 	background-size: contain;
 	background-position: 50%;
 	background-repeat: no-repeat;
-	object-fit: contain;
 	transition: filter 700ms;
 	transition-delay: 700ms;
 	filter: grayscale(0.8) brightness(1);
+	opacity: 0;
+	animation: 1s ease-out 1 normal forwards ${appear};
 
-	///
 	.cover {
-		height: 100%;
-		width: 100%;
-		display: flex;
 		background-color: rgba(13, 13, 13, 0.7);
 		transition: background-color 700ms;
-		align-items: center;
 	}
 	.underScore {
 		display: inline-block;
@@ -56,8 +33,7 @@ const Card = styled.article`
 	}
 
 	.innerWrapper {
-		user-select: none;
-		margin: 20px 50px;
+		padding: 16px;
 		color: rgb(250, 250, 250);
 		font-size: 1.8em;
 		width: 100%;
@@ -66,7 +42,7 @@ const Card = styled.article`
 		transition: opacity 700ms;
 	}
 	h3 {
-		font-size: 0.8em;
+		font-size: 0.7em;
 		letter-spacing: 2px;
 	}
 	p {
@@ -84,23 +60,20 @@ const Card = styled.article`
 	}
 
 	&.appearRight {
-		animation-name: ${() => appearRight};
-		animation-duration: 1s;
-		animation-timing-function: ease-out;
+		transform: translate(400px, 0);
 	}
 	&.appearLeft {
-		animation-name: ${() => appearLeft};
-		animation-duration: 1s;
-		animation-timing-function: ease-out;
+		transform: translate(-400px, 0);
 	}
 
 	@media only screen and (min-width: 870px) {
 		filter: grayscale(0.4) brightness(0.7);
-		opacity: 0;
+		opacity: 1;
 
 		.cover {
 			background-color: initial;
 		}
+
 		&:hover {
 			filter: grayscale(0) brightness(1);
 
@@ -109,7 +82,6 @@ const Card = styled.article`
 				background-color: rgba(13, 13, 13, 0.6);
 			}
 			.innerWrapper {
-				opacity: 1;
 				transition: opacity 700ms;
 			}
 		}
@@ -117,8 +89,9 @@ const Card = styled.article`
 `
 
 function ProjectCard({ img, title, description, isVisible, direction, url, techs = [] }) {
+	const appearClass = direction === 'left' ? 'appearLeft' : 'appearRight'
 	return (
-		<Card img={img} className={isVisible && (direction === 'left' ? 'appearLeft' : 'appearRight')}>
+		<Card img={img} className={isVisible && appearClass}>
 			<a href={url} target='_blank' className='cover' rel='noreferrer'>
 				<div className='innerWrapper'>
 					<h3 className='underScore'>{title}</h3>

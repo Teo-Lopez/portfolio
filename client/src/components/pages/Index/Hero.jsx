@@ -30,7 +30,7 @@ const Header = styled.header`
 		margin-top: 16px;
 	}
 
-	@media only screen and (min-width: 870px) {
+	@media only screen and (min-width: 570px) {
 		height: calc(100vh - 65px);
 
 		.fixer {
@@ -69,7 +69,7 @@ const Header = styled.header`
 
 	@media only screen and (min-width: 1200px) {
 		img {
-			max-height: 280px;
+			max-height: 240px;
 		}
 
 		h1 {

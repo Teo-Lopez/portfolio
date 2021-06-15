@@ -15,7 +15,7 @@ const TechCardWrapper = styled.div`
 
 	@media only screen and (min-width: 800px) {
 		h2 {
-			font-size: 2em;
+			font-size: 1.8em;
 		}
 	}
 
