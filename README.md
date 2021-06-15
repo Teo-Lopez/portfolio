@@ -1,4 +1,4 @@
-# WAVE MAPS
+# Teodoro Lopez Portfolio
 
 ---
 
