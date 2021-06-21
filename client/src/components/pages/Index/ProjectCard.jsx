@@ -1,97 +1,7 @@
-import React from 'react'
-import styled, { keyframes } from 'styled-components'
-
-const appear = keyframes`
-  from {
-    opacity: 0
-  }
-  to {
-    transform: translate(0, 0);
-  	opacity: 1
-  }
-`
-
-const Card = styled.article`
-	width: 100%;
-	background-image: ${({ img }) => `url(${img})`};
-	background-size: contain;
-	background-position: 50%;
-	background-repeat: no-repeat;
-	transition: filter 700ms;
-	transition-delay: 700ms;
-	filter: grayscale(0.8) brightness(1);
-	opacity: 0;
-	animation: 1s ease-out 1 normal forwards ${appear};
-
-	.cover {
-		background-color: rgba(13, 13, 13, 0.7);
-		transition: background-color 700ms;
-	}
-	.underScore {
-		display: inline-block;
-		border-bottom: 1px solid rgba(250, 250, 250, 0.8);
-	}
-
-	.innerWrapper {
-		padding: 16px;
-		color: rgb(250, 250, 250);
-		font-size: 1.8em;
-		width: 100%;
-		text-align: center;
-		opacity: 1;
-		transition: opacity 700ms;
-	}
-	h3 {
-		font-size: 0.7em;
-		letter-spacing: 2px;
-	}
-	p {
-		color: white;
-		font-size: 0.5em;
-		font-weight: 300;
-	}
-
-	.tech-wrapper {
-		width: 80%;
-		margin: 0 auto;
-		h4 {
-			font-size: 0.5em;
-		}
-	}
-
-	&.appearRight {
-		transform: translate(400px, 0);
-	}
-	&.appearLeft {
-		transform: translate(-400px, 0);
-	}
-
-	@media only screen and (min-width: 870px) {
-		filter: grayscale(0.4) brightness(0.7);
-		opacity: 1;
-
-		.cover {
-			background-color: initial;
-		}
-
-		&:hover {
-			filter: grayscale(0) brightness(1);
-
-			.cover {
-				transition: background-color 700ms;
-				background-color: rgba(13, 13, 13, 0.6);
-			}
-			.innerWrapper {
-				transition: opacity 700ms;
-			}
-		}
-	}
-`
-
-function ProjectCard({ img, title, description, isVisible, direction, url, techs = [] }) {
+const ProjectCard = ({ img, title, description, isVisible, direction, url, techs = [] }) => {
 	const appearClass = direction === 'left' ? 'appearLeft' : 'appearRight'
 	return (
-		<Card img={img} className={isVisible && appearClass}>
+		<div img={img} className={isVisible && appearClass}>
 			<a href={url} target='_blank' className='cover' rel='noreferrer'>
 				<div className='innerWrapper'>
 					<h3 className='underScore'>{title}</h3>
@@ -103,8 +13,58 @@ function ProjectCard({ img, title, description, isVisible, direction, url, techs
 					</footer>
 				</div>
 			</a>
-		</Card>
+		</div>
 	)
 }
 
 export default ProjectCard
+
+// const useStyles = makeStyles({
+//   root: {
+//     maxWidth: 345
+//   },
+//   media: {
+//     height: 140
+//   }
+// })
+// import { makeStyles } from '@material-ui/core/styles';
+// import Card from '@material-ui/core/Card';
+// import CardActionArea from '@material-ui/core/CardActionArea';
+// import CardActions from '@material-ui/core/CardActions';
+// import CardContent from '@material-ui/core/CardContent';
+// import CardMedia from '@material-ui/core/CardMedia';
+// import Button from '@material-ui/core/Button';
+// import Typography from '@material-ui/core/Typography';
+
+// export default function MediaCard() {
+//   const classes = useStyles();
+
+//   return (
+//     <Card className={classes.root}>
+//       <CardActionArea>
+//         <CardMedia
+//           className={classes.media}
+//           image="/static/images/cards/contemplative-reptile.jpg"
+//           title="Contemplative Reptile"
+//         />
+//         <CardContent>
+//           <Typography gutterBottom variant="h5" component="h2">
+//             Lizard
+//           </Typography>
+//           <Typography variant="body2" color="textSecondary" component="p">
+//             Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+//             across all continents except Antarctica
+//           </Typography>
+//         </CardContent>
+//       </CardActionArea>
+//       <CardActions>
+//         <Button size="small" color="primary">
+//           Share
+//         </Button>
+//         <Button size="small" color="primary">
+//           Learn More
+//         </Button>
+//       </CardActions>
+//     </Card>
+//   );
+// }

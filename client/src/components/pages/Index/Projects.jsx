@@ -5,82 +5,25 @@ import chronopomo from './assets/chronopomo.png'
 import lab from './assets/lab.jpg'
 import TrackVisibility from 'react-on-screen'
 import ProjectCard from './ProjectCard'
+import ProjectOverview from './ProjectOverview'
 
 const ProjectsWrapper = styled.section`
-	text-align: center;
-	width: 100%;
-	position: relative;
-	background-color: black;
-	color: white;
-
 	h2 {
-		font-size: 2.5em;
-		letter-spacing: 6px;
-		padding: 30px;
+		text-align: center;
+		font-size: 2.3rem;
+		letter-spacing: 3px;
+		font-weight: 200;
 	}
 `
 
-const StyledGrid = styled.div`
-	display: grid;
-	grid-template-columns: 100%;
-	grid-auto-rows: minmax(300px, auto);
-	grid-gap: 0px;
-	color: white;
-
-	.project {
-		display: flex;
-		align-items: center;
-		grid-column: 0 / 1;
-	}
-
-	.project:nth-of-type(1) {
-		grid-row: 1 / 2;
-	}
-
-	.project:nth-of-type(2) {
-		grid-row: 2 / 3;
-	}
-
-	.project:nth-of-type(3) {
-		grid-row: 3 / 4;
-	}
-
-	.project:nth-of-type(4) {
-		grid-row: 4 / 5;
-	}
-
-	.project:nth-of-type(5) {
-		grid-row: 5 / 6;
-	}
-
-	@media only screen and (min-width: 870px) {
-		.project:nth-of-type(1) {
-			grid-row: 1 / 2;
-		}
-
-		.project:nth-of-type(2) {
-			grid-row: 3 / 4;
-		}
-
-		.project:nth-of-type(3) {
-			grid-row: 5 / 6;
-		}
-
-		.project:nth-of-type(4) {
-			grid-row: 6 / 7;
-		}
-
-		.project:nth-of-type(5) {
-			grid-row: 8 / 9;
-		}
-	}
-`
+const StyledGrid = styled.div``
 
 function Projects() {
 	return (
 		<ProjectsWrapper className='projects'>
 			<h2>Proyectos</h2>
 			<StyledGrid id='projects'>
+			<ProjectOverview></ProjectOverview>
 				<TrackVisibility once partialVisibility className='project'>
 					<ProjectCard
 						direction='left'
