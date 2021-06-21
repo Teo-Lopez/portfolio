@@ -25,12 +25,6 @@ class App extends Component {
 				<main>
 					<Routes handleAlert={this.handleAlert} />
 				</main>
-				<Alert
-					handleAlert={this.handleAlert}
-					show={this.state.alert.show}
-					title={this.state.alert.title}
-					text={this.state.alert.text}
-				/>
 			</>
 		)
 	}
