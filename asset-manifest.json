@@ -1,17 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.dfaa4d5e.chunk.css",
-    "main.js": "/static/js/main.fbc0d788.chunk.js",
-    "main.js.map": "/static/js/main.fbc0d788.chunk.js.map",
+    "main.css": "/static/css/main.bbef8f35.chunk.css",
+    "main.js": "/static/js/main.b5f4c2ca.chunk.js",
+    "main.js.map": "/static/js/main.b5f4c2ca.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.03887cff.js",
     "runtime-main.js.map": "/static/js/runtime-main.03887cff.js.map",
-    "static/css/2.4c97ca4f.chunk.css": "/static/css/2.4c97ca4f.chunk.css",
-    "static/js/2.0d7e1668.chunk.js": "/static/js/2.0d7e1668.chunk.js",
-    "static/js/2.0d7e1668.chunk.js.map": "/static/js/2.0d7e1668.chunk.js.map",
+    "static/js/2.044aea2b.chunk.js": "/static/js/2.044aea2b.chunk.js",
+    "static/js/2.044aea2b.chunk.js.map": "/static/js/2.044aea2b.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/2.4c97ca4f.chunk.css.map": "/static/css/2.4c97ca4f.chunk.css.map",
-    "static/css/main.dfaa4d5e.chunk.css.map": "/static/css/main.dfaa4d5e.chunk.css.map",
-    "static/js/2.0d7e1668.chunk.js.LICENSE.txt": "/static/js/2.0d7e1668.chunk.js.LICENSE.txt",
+    "static/css/main.bbef8f35.chunk.css.map": "/static/css/main.bbef8f35.chunk.css.map",
+    "static/js/2.044aea2b.chunk.js.LICENSE.txt": "/static/js/2.044aea2b.chunk.js.LICENSE.txt",
     "static/media/alexa.4ca5d6ec.jpg": "/static/media/alexa.4ca5d6ec.jpg",
     "static/media/chronopomo.05b11234.png": "/static/media/chronopomo.05b11234.png",
     "static/media/dice.7776fc57.jpg": "/static/media/dice.7776fc57.jpg",
@@ -20,14 +18,12 @@
     "static/media/mongo-logo.4dbf6bd3.png": "/static/media/mongo-logo.4dbf6bd3.png",
     "static/media/node-logo.d99c5dec.png": "/static/media/node-logo.d99c5dec.png",
     "static/media/profile.eda38a89.jpeg": "/static/media/profile.eda38a89.jpeg",
-    "static/media/react-logo.80045de7.png": "/static/media/react-logo.80045de7.png",
-    "static/media/teologo.1d55ee80.svg": "/static/media/teologo.1d55ee80.svg"
+    "static/media/react-logo.80045de7.png": "/static/media/react-logo.80045de7.png"
   },
   "entrypoints": [
     "static/js/runtime-main.03887cff.js",
-    "static/css/2.4c97ca4f.chunk.css",
-    "static/js/2.0d7e1668.chunk.js",
-    "static/css/main.dfaa4d5e.chunk.css",
-    "static/js/main.fbc0d788.chunk.js"
+    "static/js/2.044aea2b.chunk.js",
+    "static/css/main.bbef8f35.chunk.css",
+    "static/js/main.b5f4c2ca.chunk.js"
   ]
 }
