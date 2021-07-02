@@ -8,10 +8,16 @@ const TechCardWrapper = styled.div`
 	img {
 		height: 15vh;
 	}
-	@media only screen and (min-width: 800px) {
+	@media only screen and (min-width: 600px) {
+		img {
+			height: 150px
+		}
 	}
 
 	@media only screen and (min-width: 1200px) {
+		img {
+			height: 200px
+		}
 	}
 `
 

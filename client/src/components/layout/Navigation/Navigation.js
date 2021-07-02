@@ -6,12 +6,12 @@ import {
 	IconButton,
 	Drawer,
 	Link,
-	MenuItem
+	MenuItem,
 } from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu'
 import React, { useState, useEffect } from 'react'
 import { HashLink } from 'react-router-hash-link'
-import brandSvg from './teologo.svg'
+
 
 const headersData = [
 	{
@@ -28,24 +28,18 @@ const headersData = [
 	}
 ]
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles(theme => ({
 	header: {
-		backgroundColor: 'rgb(0, 0,0)',
-		color: 'rgb(250,250,250)',
 		paddingRight: '79px',
-		paddingLeft: '118px',
-		'@media (max-width: 900px)': {
-			paddingLeft: 0
-		}
 	},
 	logo: {
-		height: '50px',
-		fontFamily: 'Work Sans, sans-serif',
+		userSelect: "none",
+		fontSize: "1.4rem",
 		fontWeight: 600,
-		color: 'rgb(11,11,11)',
-		textAlign: 'left',
+		letterSpacing: "5px",
+		textAlign: 'center',
 		margin: '6px auto',
-		display: 'block'
+		color: theme.palette.primary.contrastText
 	},
 	menuButton: {
 		fontFamily: 'Open Sans, sans-serif',
@@ -58,11 +52,31 @@ const useStyles = makeStyles(() => ({
 		justifyContent: 'space-between'
 	},
 	paper: {
-		backgroundColor: 'rgb(0, 0,0)',
-		color: 'rgb(250,250,250)'
+		backgroundColor: theme.palette.primary.main
 	},
-	drawerContainer: {
-		padding: '20px 30px'
+	'@media (min-width: 890px)': {
+		header: {
+			padding: 0
+		},
+		logo: {
+			margin: 0,
+		}
+	},
+	'@media (min-width: 1200px)': {
+		header: {
+			padding: "0 36px",
+		},
+		toolbar: {
+			justifyContent: "center"
+		},
+		menuButton: {
+			fontSize: "1rem",
+			letterSpacing: "2px",
+			fontWeight: 100
+		},
+		logo: {
+			marginRight: "60px",
+		}
 	}
 }))
 
@@ -91,6 +105,9 @@ const Navigation = () => {
 			window.removeEventListener('resize', () => setResponsiveness())
 		}
 	}, [])
+
+
+
 
 	const displayDesktop = () => {
 		return (
@@ -127,7 +144,7 @@ const Navigation = () => {
 						onClose: handleDrawerClose
 					}}
 				>
-					<div>{brandLogo}</div>
+					{brandLogo}
 					<div className={drawerContainer}>{getDrawerChoices()}</div>
 				</Drawer>
 			</Toolbar>
@@ -152,7 +169,7 @@ const Navigation = () => {
 		})
 	}
 
-	const brandLogo = <img className={logo} src={brandSvg} alt='brand logo' />
+	const brandLogo = <p className={logo}>TL</p>
 
 	const getMenuButtons = () => {
 		return headersData.map(({ label, href }) => {

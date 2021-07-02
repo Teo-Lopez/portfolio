@@ -2,7 +2,8 @@ import { Component } from 'react'
 import './App.css'
 import Routes from './routes/Routes'
 import Navigation from './layout/Navigation/Navigation'
-import Alert from './../components/shared/Alert/Alert'
+import { ThemeProvider } from '@material-ui/core/styles'
+import theme from './theme'
 
 class App extends Component {
 	constructor() {
@@ -20,12 +21,12 @@ class App extends Component {
 
 	render() {
 		return (
-			<>
+			<ThemeProvider theme={theme}>
 				<Navigation />
 				<main>
 					<Routes handleAlert={this.handleAlert} />
 				</main>
-			</>
+			</ThemeProvider>
 		)
 	}
 }
